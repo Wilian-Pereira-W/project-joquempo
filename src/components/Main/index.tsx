@@ -8,6 +8,7 @@ import { dataIconsSort } from '../../data/iconsSort';
 import Results from '../Results';
 import { RootState } from '../../redux/store';
 import { disable } from '../../features/enableScreen/enableScreenSlice';
+import Victory from '../Victory';
 
 export interface Result {
   id: number;
@@ -22,6 +23,13 @@ function Main(): JSX.Element {
   const enableScreen = useSelector(
     (state: RootState) => state.enableScreen.enable,
   );
+  const enableMain = useSelector(
+    (state: RootState) => state.enableScreen.enableMain,
+  );
+
+  const player = useSelector((state: RootState) => state.scoreboard.player);
+  const will = useSelector((state: RootState) => state.scoreboard.will);
+
   const dispatch = useDispatch();
 
   const handleClick = (id: number) => {
@@ -33,28 +41,36 @@ function Main(): JSX.Element {
     setWillChoice(willResult);
   };
   return (
-    <main className={styles.container}>
-      {enableScreen && (
-        <section className={styles.content}>
-          <img
-            className={styles.bgTriangulo}
-            src={bgTriangulo}
-            alt="bgTriangulo"
-          />
-          {dataIcons.map((icon) => (
-            <Button
-              key={icon.id}
-              name={icon.name}
-              url={icon.url}
-              id={icon.id}
-              cor={icon.cor}
-              onClick={() => handleClick(icon.id)}
-            />
-          ))}
-        </section>
+    <>
+      {enableMain && (
+        <main className={styles.container}>
+          {enableScreen && (
+            <section className={styles.content}>
+              <img
+                className={styles.bgTriangulo}
+                src={bgTriangulo}
+                alt="bgTriangulo"
+              />
+              {dataIcons.map((icon) => (
+                <Button
+                  key={icon.id}
+                  name={icon.name}
+                  url={icon.url}
+                  id={icon.id}
+                  cor={icon.cor}
+                  onClick={() => handleClick(icon.id)}
+                />
+              ))}
+            </section>
+          )}
+          {player === 10 || will === 10 ? (
+            <Victory />
+          ) : (
+            <Results player={playerChoice} will={willChoice} />
+          )}
+        </main>
       )}
-      <Results player={playerChoice} will={willChoice} />
-    </main>
+    </>
   );
 }
 
