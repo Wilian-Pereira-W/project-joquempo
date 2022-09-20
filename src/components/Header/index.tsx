@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import styles from './styles.module.scss';
-function Header() {
+function Header(): JSX.Element {
   const player = useSelector((state: RootState) => state.scoreboard.player);
   const will = useSelector((state: RootState) => state.scoreboard.will);
   const draw = useSelector((state: RootState) => state.scoreboard.draw);
