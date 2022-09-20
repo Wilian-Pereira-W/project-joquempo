@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  margin-top: 100px;
+  height: 30px;
+  align-items: center;
+  justify-content: space-around;
+
+  h2 {
+    color: #FFF;
+    font-size: 30px;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  margin: 10px 10px;
+  justify-content: space-between;
+
+  button {
+    background-color: #FFF;
+    height: 30px;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+}
