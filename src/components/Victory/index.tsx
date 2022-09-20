@@ -15,12 +15,12 @@ function Victory() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (player === 10) {
+    if (player === 0) {
       setResult(name);
       dispatch(enableResult);
       return;
     }
-    if (will === 10) {
+    if (will === 0) {
       setResult('Will');
       dispatch(enableResult);
       return;

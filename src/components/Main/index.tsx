@@ -63,7 +63,7 @@ function Main(): JSX.Element {
               ))}
             </section>
           )}
-          {player === 10 || will === 10 ? (
+          {player === 0 || will === 0 ? (
             <Victory />
           ) : (
             <Results player={playerChoice} will={willChoice} />

@@ -7,8 +7,8 @@ export interface scoreboardState {
 }
 
 const initialState: scoreboardState = {
-  player: 0,
-  will: 0,
+  player: 10,
+  will: 10,
   draw: 0,
 };
 
@@ -17,10 +17,10 @@ export const scoreboardSlice = createSlice({
   initialState,
   reducers: {
     incrementPlayer: (state) => {
-      state.player += 1;
+      state.player -= 1;
     },
     incrementWill: (state) => {
-      state.will += 1;
+      state.will -= 1;
     },
     incrementDraw: (state) => {
       state.draw += 1;
