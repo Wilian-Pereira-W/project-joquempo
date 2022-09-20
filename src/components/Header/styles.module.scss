@@ -39,3 +39,29 @@
     }
   }
 }
+
+@media (min-width: 360px){
+  .container {
+    width: 95%;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .score {
+    width: 300px;
+  }
+}
+
+@media (min-width: 412px){
+  .container {
+    width: 400px;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .score {
+    width: 300px;
+  }
+}
