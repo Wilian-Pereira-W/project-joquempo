@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  justify-content: center;
+  margin: 20px;
+
+  .bgTriangulo {
+    margin-top: 70px;
+    position: absolute;
+    width: 250px;
+  }
+}
